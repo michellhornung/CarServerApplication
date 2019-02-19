@@ -15,18 +15,18 @@ public class CarDTO
     private String licensePlate;
 
     private Long seatCount;
-    
+
     private Boolean isConvertible;
-    
+
     private Long rating;
-    
+
     private String engineType;
 
     private String manufacturer;
 
+
     private CarDTO()
-    {
-    }
+    {}
 
 
     private CarDTO(Long id, String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer)
@@ -53,70 +53,85 @@ public class CarDTO
         return id;
     }
 
-    public void setId(Long id) {
-		this.id = id;
-	}
 
-    public String getLicensePlate() {
-		return licensePlate;
-	}
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
 
 
-	public void setLicensePlate(String licensePlate) {
-		this.licensePlate = licensePlate;
-	}
+    public String getLicensePlate()
+    {
+        return licensePlate;
+    }
 
 
-	public Long getSeatCount() {
-		return seatCount;
-	}
+    public void setLicensePlate(String licensePlate)
+    {
+        this.licensePlate = licensePlate;
+    }
 
 
-	public void setSeatCount(Long seatCount) {
-		this.seatCount = seatCount;
-	}
+    public Long getSeatCount()
+    {
+        return seatCount;
+    }
 
 
-	public Boolean getIsConvertible() {
-		return isConvertible;
-	}
+    public void setSeatCount(Long seatCount)
+    {
+        this.seatCount = seatCount;
+    }
 
 
-	public void setIsConvertible(Boolean isConvertible) {
-		this.isConvertible = isConvertible;
-	}
+    public Boolean getIsConvertible()
+    {
+        return isConvertible;
+    }
 
 
-	public Long getRating() {
-		return rating;
-	}
+    public void setIsConvertible(Boolean isConvertible)
+    {
+        this.isConvertible = isConvertible;
+    }
 
 
-	public void setRating(Long rating) {
-		this.rating = rating;
-	}
+    public Long getRating()
+    {
+        return rating;
+    }
 
 
-	public String getEngineType() {
-		return engineType;
-	}
+    public void setRating(Long rating)
+    {
+        this.rating = rating;
+    }
 
 
-	public void setEngineType(String engineType) {
-		this.engineType = engineType;
-	}
+    public String getEngineType()
+    {
+        return engineType;
+    }
 
 
-	public String getManufacturer() {
-		return manufacturer;
-	}
+    public void setEngineType(String engineType)
+    {
+        this.engineType = engineType;
+    }
 
 
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
-	}
+    public String getManufacturer()
+    {
+        return manufacturer;
+    }
 
-	public static class CarDTOBuilder
+
+    public void setManufacturer(String manufacturer)
+    {
+        this.manufacturer = manufacturer;
+    }
+
+    public static class CarDTOBuilder
     {
         private Long id;
         private String licensePlate;
@@ -126,6 +141,7 @@ public class CarDTO
         private String engineType;
         private String manufacturer;
 
+
         public CarDTOBuilder setId(Long id)
         {
             this.id = id;
@@ -133,42 +149,48 @@ public class CarDTO
         }
 
 
-        public CarDTOBuilder setLicensePlate(String licensePlate) {
-			this.licensePlate = licensePlate;
-			return this;
-		}
+        public CarDTOBuilder setLicensePlate(String licensePlate)
+        {
+            this.licensePlate = licensePlate;
+            return this;
+        }
 
 
-		public CarDTOBuilder setSeatCount(Long seatCount) {
-			this.seatCount = seatCount;
-			return this;
-		}
+        public CarDTOBuilder setSeatCount(Long seatCount)
+        {
+            this.seatCount = seatCount;
+            return this;
+        }
 
 
-		public CarDTOBuilder setIsConvertible(Boolean isConvertible) {
-			this.isConvertible = isConvertible;
-			return this;
-		}
+        public CarDTOBuilder setIsConvertible(Boolean isConvertible)
+        {
+            this.isConvertible = isConvertible;
+            return this;
+        }
 
 
-		public CarDTOBuilder setRating(Long rating) {
-			this.rating = rating;
-			return this;
-		}
+        public CarDTOBuilder setRating(Long rating)
+        {
+            this.rating = rating;
+            return this;
+        }
 
 
-		public CarDTOBuilder setEngineType(String engineType) {
-			this.engineType = engineType;
-			return this;
-			
-		}
+        public CarDTOBuilder setEngineType(String engineType)
+        {
+            this.engineType = engineType;
+            return this;
+
+        }
 
 
-		public CarDTOBuilder setManufacturer(String manufacturer) {
-			this.manufacturer = manufacturer;
-			return this;
-		}
-		
+        public CarDTOBuilder setManufacturer(String manufacturer)
+        {
+            this.manufacturer = manufacturer;
+            return this;
+        }
+
 
         public CarDTO createCarDTO()
         {

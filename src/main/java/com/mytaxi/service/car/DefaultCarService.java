@@ -91,20 +91,23 @@ public class DefaultCarService implements CarService
      */
     @Override
     @Transactional
-	public void updateCar(long carId, String licensePlate, Long seatCount, Boolean isConvertible, Long rating,
-			String engineType, String manufacturer, Boolean isDeleted) throws EntityNotFoundException {
-    	
-		CarDO carDO = find(carId);
-		carDO.setDateCreated(carDO.getDateCreated());
-		carDO.setLicensePlate(licensePlate);
-		carDO.setSeatCount(seatCount);
-		carDO.setIsConvertible(isConvertible);
-		carDO.setRating(rating);
-		carDO.setEngineType(engineType);
-		carDO.setManufacturer(manufacturer);
-		carDO.setDeleted(isDeleted);
+    public void updateCar(
+        long carId, String licensePlate, Long seatCount, Boolean isConvertible, Long rating,
+        String engineType, String manufacturer, Boolean isDeleted)
+        throws EntityNotFoundException
+    {
 
-	}
+        CarDO carDO = find(carId);
+        carDO.setDateCreated(carDO.getDateCreated());
+        carDO.setLicensePlate(licensePlate);
+        carDO.setSeatCount(seatCount);
+        carDO.setIsConvertible(isConvertible);
+        carDO.setRating(rating);
+        carDO.setEngineType(engineType);
+        carDO.setManufacturer(manufacturer);
+        carDO.setDeleted(isDeleted);
+
+    }
 
 
     /**
@@ -118,9 +121,11 @@ public class DefaultCarService implements CarService
         return carRepository.findAll();
     }
 
+
     private CarDO findCarById(Long carId) throws EntityNotFoundException
     {
-        return carRepository.findById(carId)
+        return carRepository
+            .findById(carId)
             .orElseThrow(() -> new EntityNotFoundException("Could not find entity with id: " + carId));
     }
 

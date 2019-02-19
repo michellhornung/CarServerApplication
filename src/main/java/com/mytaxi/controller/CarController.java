@@ -25,7 +25,6 @@ import com.mytaxi.exception.ConstraintsViolationException;
 import com.mytaxi.exception.EntityNotFoundException;
 import com.mytaxi.service.car.CarService;
 
-
 /**
  * All operations with a car will be routed by this controller.
  * <p/>
@@ -33,9 +32,11 @@ import com.mytaxi.service.car.CarService;
 @Controller
 @RestController
 @RequestMapping("v1/cars")
-public class CarController {
-	
-	private final CarService carService;
+public class CarController
+{
+
+    private final CarService carService;
+
 
     @Autowired
     public CarController(final CarService carService)
@@ -66,13 +67,18 @@ public class CarController {
         carService.delete(carId);
     }
 
-	@PutMapping("/{carId}")
-	public void updateCar(@PathVariable long carId, @RequestParam String licensePlate,
-			@RequestParam Long seatCount, @RequestParam Boolean isConvertible, @RequestParam Long rating,
-			@RequestParam String engineType, @RequestParam String manufacturer, @RequestParam Boolean isDeleted) throws EntityNotFoundException {
-		
-		carService.updateCar(carId, licensePlate, seatCount, isConvertible, rating, engineType, manufacturer, isDeleted);
-	}
+
+    @PutMapping("/{carId}")
+    public void updateCar(
+        @PathVariable long carId, @RequestParam String licensePlate,
+        @RequestParam Long seatCount, @RequestParam Boolean isConvertible, @RequestParam Long rating,
+        @RequestParam String engineType, @RequestParam String manufacturer, @RequestParam Boolean isDeleted)
+        throws EntityNotFoundException
+    {
+
+        carService.updateCar(carId, licensePlate, seatCount, isConvertible, rating, engineType, manufacturer, isDeleted);
+    }
+
 
     @GetMapping
     public List<CarDTO> findCars()

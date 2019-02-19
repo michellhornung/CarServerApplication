@@ -12,7 +12,6 @@ public class MytaxiServerApplicantTestApplicationTests
 
     @Test
     public void contextLoads()
-    {
-    }
+    {}
 
 }

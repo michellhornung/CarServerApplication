@@ -13,8 +13,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(
     name = "car",
-    uniqueConstraints = @UniqueConstraint(name = "uc_licensePlate", columnNames = {"licensePlate"})
-)
+    uniqueConstraints = @UniqueConstraint(name = "uc_licensePlate", columnNames = {"licensePlate"}))
 public class CarDO
 {
 
@@ -38,20 +37,20 @@ public class CarDO
 
     @Column
     private Long rating;
-    
+
     @Column
     private String engineType;
-    
+
     @Column
     private String manufacturer;
-    
+
     @Column(nullable = false)
     private Boolean deleted = false;
 
+
     @SuppressWarnings("unused")
-	private CarDO()
-    {
-    }
+    private CarDO()
+    {}
 
 
     public CarDO(String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer)
@@ -66,86 +65,103 @@ public class CarDO
     }
 
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId()
+    {
+        return id;
+    }
 
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
 
 
-	public ZonedDateTime getDateCreated() {
-		return dateCreated;
-	}
+    public ZonedDateTime getDateCreated()
+    {
+        return dateCreated;
+    }
 
 
-	public void setDateCreated(ZonedDateTime dateCreated) {
-		this.dateCreated = dateCreated;
-	}
+    public void setDateCreated(ZonedDateTime dateCreated)
+    {
+        this.dateCreated = dateCreated;
+    }
 
 
-	public String getLicensePlate() {
-		return licensePlate;
-	}
+    public String getLicensePlate()
+    {
+        return licensePlate;
+    }
 
 
-	public void setLicensePlate(String licensePlate) {
-		this.licensePlate = licensePlate;
-	}
+    public void setLicensePlate(String licensePlate)
+    {
+        this.licensePlate = licensePlate;
+    }
 
 
-	public Long getSeatCount() {
-		return seatCount;
-	}
+    public Long getSeatCount()
+    {
+        return seatCount;
+    }
 
 
-	public void setSeatCount(Long seatCount) {
-		this.seatCount = seatCount;
-	}
+    public void setSeatCount(Long seatCount)
+    {
+        this.seatCount = seatCount;
+    }
 
 
-	public Boolean getIsConvertible() {
-		return isConvertible;
-	}
+    public Boolean getIsConvertible()
+    {
+        return isConvertible;
+    }
 
 
-	public void setIsConvertible(Boolean isConvertible) {
-		this.isConvertible = isConvertible;
-	}
+    public void setIsConvertible(Boolean isConvertible)
+    {
+        this.isConvertible = isConvertible;
+    }
 
 
-	public Long getRating() {
-		return rating;
-	}
+    public Long getRating()
+    {
+        return rating;
+    }
 
 
-	public void setRating(Long rating) {
-		this.rating = rating;
-	}
+    public void setRating(Long rating)
+    {
+        this.rating = rating;
+    }
 
 
-	public String getEngineType() {
-		return engineType;
-	}
+    public String getEngineType()
+    {
+        return engineType;
+    }
 
 
-	public void setEngineType(String engineType) {
-		this.engineType = engineType;
-	}
+    public void setEngineType(String engineType)
+    {
+        this.engineType = engineType;
+    }
 
 
-	public String getManufacturer() {
-		return manufacturer;
-	}
+    public String getManufacturer()
+    {
+        return manufacturer;
+    }
 
 
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
-	}
-	
-	public Boolean getDeleted()
+    public void setManufacturer(String manufacturer)
+    {
+        this.manufacturer = manufacturer;
+    }
+
+
+    public Boolean getDeleted()
     {
         return deleted;
     }
@@ -155,8 +171,5 @@ public class CarDO
     {
         this.deleted = deleted;
     }
-
-
-   
 
 }

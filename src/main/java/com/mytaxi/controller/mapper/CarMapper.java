@@ -10,23 +10,24 @@ public class CarMapper
 {
     public static CarDO makeCarDO(CarDTO carDTO)
     {
-        return new CarDO(carDTO.getLicensePlate(), carDTO.getSeatCount(), carDTO.getIsConvertible(), carDTO.getRating(), 
-        		carDTO.getEngineType(), carDTO.getManufacturer());
+        return new CarDO(
+            carDTO.getLicensePlate(), carDTO.getSeatCount(), carDTO.getIsConvertible(), carDTO.getRating(),
+            carDTO.getEngineType(), carDTO.getManufacturer());
     }
 
 
     public static CarDTO makeCarDTO(CarDO carDO)
     {
-        CarDTO.CarDTOBuilder carDTOBuilder = CarDTO.newBuilder()
-            .setId(carDO.getId())
-            .setLicensePlate(carDO.getLicensePlate())
-            .setSeatCount(carDO.getSeatCount())
-            .setIsConvertible(carDO.getIsConvertible())
-            .setRating(carDO.getRating())
-            .setEngineType(carDO.getEngineType())
-            .setManufacturer(carDO.getManufacturer());
-        
-            
+        CarDTO.CarDTOBuilder carDTOBuilder =
+            CarDTO
+                .newBuilder()
+                .setId(carDO.getId())
+                .setLicensePlate(carDO.getLicensePlate())
+                .setSeatCount(carDO.getSeatCount())
+                .setIsConvertible(carDO.getIsConvertible())
+                .setRating(carDO.getRating())
+                .setEngineType(carDO.getEngineType())
+                .setManufacturer(carDO.getManufacturer());
 
         return carDTOBuilder.createCarDTO();
     }
@@ -34,7 +35,8 @@ public class CarMapper
 
     public static List<CarDTO> makeCarDTOList(Collection<CarDO> cars)
     {
-        return cars.stream()
+        return cars
+            .stream()
             .map(CarMapper::makeCarDTO)
             .collect(Collectors.toList());
     }

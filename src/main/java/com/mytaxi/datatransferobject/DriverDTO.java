@@ -22,8 +22,7 @@ public class DriverDTO
 
 
     private DriverDTO()
-    {
-    }
+    {}
 
 
     private DriverDTO(Long id, String username, String password, GeoCoordinate coordinate)

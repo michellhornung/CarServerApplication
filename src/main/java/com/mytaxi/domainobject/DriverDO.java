@@ -18,8 +18,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(
     name = "driver",
-    uniqueConstraints = @UniqueConstraint(name = "uc_username", columnNames = {"username"})
-)
+    uniqueConstraints = @UniqueConstraint(name = "uc_username", columnNames = {"username"}))
 public class DriverDO
 {
 
@@ -55,8 +54,7 @@ public class DriverDO
 
 
     private DriverDO()
-    {
-    }
+    {}
 
 
     public DriverDO(String username, String password)
