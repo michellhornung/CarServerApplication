@@ -24,12 +24,14 @@ public class CarDTO
 
     private String manufacturer;
 
+    private Boolean inUse;
+
 
     private CarDTO()
     {}
 
 
-    private CarDTO(Long id, String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer)
+    private CarDTO(Long id, String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer, Boolean inUse)
     {
         this.id = id;
         this.licensePlate = licensePlate;
@@ -38,6 +40,7 @@ public class CarDTO
         this.rating = rating;
         this.engineType = engineType;
         this.manufacturer = manufacturer;
+        this.setInUse(inUse);
     }
 
 
@@ -131,6 +134,18 @@ public class CarDTO
         this.manufacturer = manufacturer;
     }
 
+
+    public Boolean getInUse()
+    {
+        return inUse;
+    }
+
+
+    public void setInUse(Boolean inUse)
+    {
+        this.inUse = inUse;
+    }
+
     public static class CarDTOBuilder
     {
         private Long id;
@@ -140,6 +155,7 @@ public class CarDTO
         private Long rating;
         private String engineType;
         private String manufacturer;
+        private Boolean inUse;
 
 
         public CarDTOBuilder setId(Long id)
@@ -192,9 +208,16 @@ public class CarDTO
         }
 
 
+        public CarDTOBuilder setInUse(Boolean inUse)
+        {
+            this.inUse = inUse;
+            return this;
+        }
+
+
         public CarDTO createCarDTO()
         {
-            return new CarDTO(id, licensePlate, seatCount, isConvertible, rating, engineType, manufacturer);
+            return new CarDTO(id, licensePlate, seatCount, isConvertible, rating, engineType, manufacturer, inUse);
         }
 
     }

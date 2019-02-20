@@ -42,6 +42,6 @@ values
 'driver08pw', 'driver08');
 
  -- Create 3 cars
-insert into car (id, date_created, license_plate, seat_count, is_convertible, rating, engine_type, manufacturer, deleted) values (1, now(), 'AAA-111', 5, false, 0, 'gas', 'Mercedes', false);
-insert into car (id, date_created, license_plate, seat_count, is_convertible, rating, engine_type, manufacturer, deleted) values (2, now(), 'BBB-222', 2, true, 5, 'gas', 'BMW', false);
-insert into car (id, date_created, license_plate, seat_count, is_convertible, rating, engine_type, manufacturer, deleted) values (3, now(), 'CCC-333', 4, false, 5, 'gas', 'Audi', false);
+insert into car (id, date_created, license_plate, seat_count, is_convertible, rating, engine_type, manufacturer, deleted, in_use) values (1, now(), 'AAA-111', 5, false, 0, 'gas', 'Mercedes', false, false);
+insert into car (id, date_created, license_plate, seat_count, is_convertible, rating, engine_type, manufacturer, deleted, in_use) values (2, now(), 'BBB-222', 2, true, 5, 'gas', 'BMW', false, false);
+insert into car (id, date_created, license_plate, seat_count, is_convertible, rating, engine_type, manufacturer, deleted, in_use) values (3, now(), 'CCC-333', 4, false, 5, 'gas', 'Audi', false, false);

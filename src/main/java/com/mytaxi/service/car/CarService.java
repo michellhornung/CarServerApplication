@@ -1,9 +1,10 @@
 package com.mytaxi.service.car;
 
+import java.util.List;
+
 import com.mytaxi.domainobject.CarDO;
 import com.mytaxi.exception.ConstraintsViolationException;
 import com.mytaxi.exception.EntityNotFoundException;
-import java.util.List;
 
 public interface CarService
 {
@@ -17,7 +18,7 @@ public interface CarService
     void delete(Long carrId) throws EntityNotFoundException;
 
 
-    void updateCar(long carId, String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer, Boolean isDeleted)
+    void updateCar(long carId, String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer, Boolean isDeleted, Boolean inUse)
         throws EntityNotFoundException;
 
 

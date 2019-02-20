@@ -93,7 +93,7 @@ public class DefaultCarService implements CarService
     @Transactional
     public void updateCar(
         long carId, String licensePlate, Long seatCount, Boolean isConvertible, Long rating,
-        String engineType, String manufacturer, Boolean isDeleted)
+        String engineType, String manufacturer, Boolean isDeleted, Boolean inUse)
         throws EntityNotFoundException
     {
 
@@ -122,6 +122,12 @@ public class DefaultCarService implements CarService
     }
 
 
+    /**
+     * Find car by given id
+     * @param carId
+     * @return
+     * @throws EntityNotFoundException
+     */
     private CarDO findCarById(Long carId) throws EntityNotFoundException
     {
         return carRepository

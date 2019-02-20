@@ -12,7 +12,7 @@ public class CarMapper
     {
         return new CarDO(
             carDTO.getLicensePlate(), carDTO.getSeatCount(), carDTO.getIsConvertible(), carDTO.getRating(),
-            carDTO.getEngineType(), carDTO.getManufacturer());
+            carDTO.getEngineType(), carDTO.getManufacturer(), carDTO.getInUse());
     }
 
 
@@ -27,7 +27,8 @@ public class CarMapper
                 .setIsConvertible(carDO.getIsConvertible())
                 .setRating(carDO.getRating())
                 .setEngineType(carDO.getEngineType())
-                .setManufacturer(carDO.getManufacturer());
+                .setManufacturer(carDO.getManufacturer())
+                .setInUse(carDO.getInUse());
 
         return carDTOBuilder.createCarDTO();
     }

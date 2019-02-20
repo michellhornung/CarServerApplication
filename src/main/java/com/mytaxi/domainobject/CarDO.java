@@ -47,13 +47,16 @@ public class CarDO
     @Column(nullable = false)
     private Boolean deleted = false;
 
+    @Column(nullable = false)
+    private Boolean inUse = false;
+
 
     @SuppressWarnings("unused")
     private CarDO()
     {}
 
 
-    public CarDO(String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer)
+    public CarDO(String licensePlate, Long seatCount, Boolean isConvertible, Long rating, String engineType, String manufacturer, Boolean inUse)
     {
         this.licensePlate = licensePlate;
         this.seatCount = seatCount;
@@ -62,6 +65,7 @@ public class CarDO
         this.engineType = engineType;
         this.manufacturer = manufacturer;
         this.deleted = false;
+        this.inUse = false;
     }
 
 
@@ -170,6 +174,18 @@ public class CarDO
     public void setDeleted(Boolean deleted)
     {
         this.deleted = deleted;
+    }
+
+
+    public Boolean getInUse()
+    {
+        return inUse;
+    }
+
+
+    public void setInUse(Boolean inUse)
+    {
+        this.inUse = inUse;
     }
 
 }
