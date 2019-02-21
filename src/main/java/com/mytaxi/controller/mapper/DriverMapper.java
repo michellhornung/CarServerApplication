@@ -11,7 +11,7 @@ public class DriverMapper
 {
     public static DriverDO makeDriverDO(DriverDTO driverDTO)
     {
-        return new DriverDO(driverDTO.getUsername(), driverDTO.getPassword());
+        return new DriverDO(driverDTO.getUsername(), driverDTO.getPassword(), null, null);
     }
 
 

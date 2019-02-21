@@ -1,10 +1,14 @@
 package com.mytaxi.service.driver;
 
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.mytaxi.domainobject.DriverDO;
 import com.mytaxi.domainvalue.OnlineStatus;
 import com.mytaxi.exception.ConstraintsViolationException;
 import com.mytaxi.exception.EntityNotFoundException;
-import java.util.List;
 
 public interface DriverService
 {
@@ -22,5 +26,13 @@ public interface DriverService
 
 
     List<DriverDO> find(OnlineStatus onlineStatus);
+
+
+    Page<DriverDO> findByUsername(String username, Pageable pageable) throws EntityNotFoundException;
+
+
+    Page<DriverDO> findByOnlineStatus(OnlineStatus onlineStatus, Pageable pageable);
+
+
 
 }

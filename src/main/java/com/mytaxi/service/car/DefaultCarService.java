@@ -2,12 +2,15 @@ package com.mytaxi.service.car;
 
 import com.mytaxi.dataaccessobject.CarRepository;
 import com.mytaxi.domainobject.CarDO;
+import com.mytaxi.domainobject.DriverDO;
 import com.mytaxi.exception.ConstraintsViolationException;
 import com.mytaxi.exception.EntityNotFoundException;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -133,6 +136,20 @@ public class DefaultCarService implements CarService
         return carRepository
             .findById(carId)
             .orElseThrow(() -> new EntityNotFoundException("Could not find entity with id: " + carId));
+    }
+
+
+    @Override
+    public Page<DriverDO> findByLicensePlate(String licensePlate, Pageable pageable)
+    {
+        return carRepository.findByLicensePlate(licensePlate, pageable);
+    }
+
+
+    @Override
+    public Page<DriverDO> findByRating(Long rating, Pageable pageable)
+    {
+        return carRepository.findByRating(rating, pageable);
     }
 
 }

@@ -10,6 +10,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -119,6 +121,21 @@ public class DefaultDriverService implements DriverService
         return driverRepository
             .findById(driverId)
             .orElseThrow(() -> new EntityNotFoundException("Could not find entity with id: " + driverId));
+    }
+
+    
+    @Override
+    public Page<DriverDO> findByUsername(String username, Pageable pageable) throws EntityNotFoundException
+    {
+        return driverRepository.findByUsername(username, pageable);
+    }
+
+
+
+    @Override
+    public Page<DriverDO> findByOnlineStatus(OnlineStatus onlineStatus, Pageable pageable)
+    {
+        return driverRepository.findByOnlineStatus(onlineStatus, pageable);
     }
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -53,13 +54,19 @@ public class DriverDO
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OnlineStatus onlineStatus;
+    
+    @Transient
+    private String licensePlate;
+    
+    @Transient
+    private Long rating;
 
 
     private DriverDO()
     {}
 
 
-    public DriverDO(String username, String password)
+    public DriverDO(String username, String password, String licensePlate, Long rating)
     {
         this.username = username;
         this.password = password;
@@ -67,6 +74,8 @@ public class DriverDO
         this.coordinate = null;
         this.dateCoordinateUpdated = null;
         this.onlineStatus = OnlineStatus.OFFLINE;
+        this.licensePlate = licensePlate;
+        this.rating = rating;
     }
 
 
@@ -128,6 +137,30 @@ public class DriverDO
     {
         this.coordinate = coordinate;
         this.dateCoordinateUpdated = ZonedDateTime.now();
+    }
+
+
+    public String getLicensePlate()
+    {
+        return licensePlate;
+    }
+
+
+    public void setLicensePlate(String licensePlate)
+    {
+        this.licensePlate = licensePlate;
+    }
+
+
+    public Long getRating()
+    {
+        return rating;
+    }
+
+
+    public void setRating(Long rating)
+    {
+        this.rating = rating;
     }
 
 }
