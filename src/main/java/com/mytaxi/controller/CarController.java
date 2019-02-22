@@ -101,7 +101,7 @@ public class CarController
         throws CarAlreadyInUseException, EntityNotFoundException
     {
         //Once coordinate is different than null, so car was selected by an online driver.
-        //Also I've created a column in table to set inUser or not.
+        //Also I've created a column in table to set inUse or not.
         if (geoCoordinate != null && onlineStatus.equals(OnlineStatus.ONLINE))
         {
             throw new CarAlreadyInUseException("The selected car is already in use! ");
