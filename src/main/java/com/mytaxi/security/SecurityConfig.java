@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
         throws Exception
     {
         auth
-            .inMemoryAuthentication().passwordEncoder(org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance()).withUser("root").password("darthMaul")
+            .inMemoryAuthentication().passwordEncoder(org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance()).withUser("user").password("darthMaul")
             .roles("USER").and().withUser("root").password("darthMaul")
             .roles("USER", "ADMIN");
     }
