@@ -15,12 +15,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
-public class TaxiApplication extends WebMvcConfigurerAdapter
+public class CarApplication extends WebMvcConfigurerAdapter
 {
 
     public static void main(String[] args)
     {
-        SpringApplication.run(TaxiApplication.class, args);
+        SpringApplication.run(CarApplication.class, args);
     }
 
 
@@ -46,7 +46,7 @@ public class TaxiApplication extends WebMvcConfigurerAdapter
     private ApiInfo generateApiInfo()
     {
         return new ApiInfo(
-            "Taxi Application", "This service is a simple CRUD for cars and drivers.", "Version 1.0 - mw",
+            "Car Application", "This service is a simple CRUD for cars and drivers.", "Version 1.0 - mw",
             "urn:tos", "career@mytaxi.com", "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0");
     }
 }
